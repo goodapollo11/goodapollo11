@@ -1,0 +1,31 @@
+# Run NurzWorks HQ on a small cloud server (any VPS with Docker).
+#   docker compose up -d
+#   docker compose logs hq        <- shows the first-time setup code
+# Put HTTPS in front of it (Caddy example below, or Cloudflare Tunnel) and set NW_BASE_URL to the public address.
+services:
+  hq:
+    build: .
+    restart: unless-stopped
+    environment:
+      NW_BASE_URL: https://hq.example.com     # your public address
+      NW_TRUST_PROXY: "1"                     # behind Caddy / a tunnel / a load balancer
+      NW_TIMEZONE: America/Chicago
+      # NW_SECRET_KEY: set a long random string here (or keep the generated /data/secret.key)
+    volumes:
+      - hq-data:/data
+    expose:
+      - "4200"
+
+  # Automatic HTTPS with Caddy. Point a DNS record (e.g. hq.example.com) at this server first.
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    command: caddy reverse-proxy --from hq.example.com --to hq:4200
+    volumes:
+      - caddy-data:/data
+    depends_on: [hq]
+
+volumes:
+  hq-data:
+  caddy-data:
