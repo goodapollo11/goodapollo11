@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" data-theme="nurzworks">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request service</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f2a44'/%3E%3Cpath d='M9 23V9l14 14V9' stroke='%2337b6a0' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/app.css">
+<link rel="stylesheet" href="/public.css">
+</head>
+<body>
+<div class="pub-wrap">
+  <div class="pub-hero">
+    <svg viewBox="0 0 32 32" width="40" height="40" aria-hidden="true"><rect class="logo-bg" width="32" height="32" rx="7"/><path class="logo-stroke" d="M9 23V9l14 14V9" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div><h1 id="co">Request service</h1><p id="tag">Tell us what you need - we'll get back to you quickly.</p></div>
+  </div>
+  <div class="card pub-card"><div class="card-b" id="body" style="padding:20px 24px">
+    <form class="form" id="f" onsubmit="return false">
+      <div class="field full"><label for="service">What do you need help with? <span class="req">*</span></label><input id="service" name="service" list="svc" placeholder="e.g. PLC keeps faulting on line 2"><datalist id="svc"></datalist></div>
+      <div class="field full"><label for="details">Details</label><textarea id="details" name="details" rows="4" placeholder="What's happening, equipment involved, when it started, anything urgent or unsafe?"></textarea></div>
+      <div class="field"><label for="name">Your name <span class="req">*</span></label><input id="name" name="name" autocomplete="name"></div>
+      <div class="field"><label for="company">Company (if any)</label><input id="company" name="company" autocomplete="organization"></div>
+      <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
+      <div class="field full"><label for="address">Service address</label><input id="address" name="address" autocomplete="street-address" placeholder="Street, city, state ZIP"></div>
+      <div class="field"><label for="preferred_date">Preferred date</label><input id="preferred_date" name="preferred_date" type="date"></div>
+      <div class="field"><label for="preferred_time">Best time</label><select id="preferred_time" name="preferred_time"><option value="">Any time</option><option>Morning</option><option>Afternoon</option><option>As soon as possible</option></select></div>
+      <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <div class="full" id="err"></div>
+      <div class="full"><button class="btn primary lg" id="go">Send request</button></div>
+    </form>
+  </div></div>
+  <p class="muted small" style="text-align:center;margin-top:14px" id="foot"></p>
+</div>
+<script src="/request.js"></script>
+</body>
+</html>

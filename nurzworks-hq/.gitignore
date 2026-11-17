@@ -1,0 +1,9 @@
+# business data and secrets never go in git
+data/
+*.db
+*.db-wal
+*.db-shm
+secret.key
+.env
+node_modules/
+.DS_Store

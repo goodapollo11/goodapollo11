@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-theme="nurzworks">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NurzWorks HQ</title>
+<meta name="theme-color" content="#0f2a44">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="NurzWorks HQ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f2a44'/%3E%3Cpath d='M9 23V9l14 14V9' stroke='%2337b6a0' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/app.css">
+<script src="/theme-boot.js"></script>
+</head>
+<body>
+<div id="auth" hidden></div>
+<div class="shell" id="shell" hidden>
+  <aside class="side" id="side">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect class="logo-bg" width="32" height="32" rx="7"/><path class="logo-stroke" d="M9 23V9l14 14V9" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><div class="brand-name" id="brandName">NurzWorks</div><div class="brand-sub">Business HQ</div></div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="side-foot" id="sideFoot"></div>
+  </aside>
+  <div class="main">
+    <header class="top">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu"></button>
+      <div class="search-wrap">
+        <span class="search-ico" id="searchIco"></span>
+        <input id="globalSearch" placeholder="Search customers, jobs, invoices…" autocomplete="off" aria-label="Search">
+        <div class="search-results" id="searchResults" hidden></div>
+      </div>
+      <div class="top-right">
+        <span id="timerSlot"></span>
+        <div class="drop"><button class="btn primary" id="newBtn" aria-haspopup="true"></button><div class="menu" id="newMenu" hidden></div></div>
+        <div class="drop"><button class="avatar" id="userBtn" aria-haspopup="true" aria-label="Account"></button><div class="menu" id="userMenu" hidden></div></div>
+      </div>
+    </header>
+    <main id="view" class="view" tabindex="-1"></main>
+  </div>
+  <nav class="bottom-nav" id="bottomNav" aria-label="Quick navigation"></nav>
+</div>
+<div id="modalRoot"></div>
+<div id="toasts" class="toasts" aria-live="polite"></div>
+<div id="tip" class="tip" hidden></div>
+<script src="/app.js"></script>
+<script src="/views-ops.js"></script>
+<script src="/views-sales.js"></script>
+<script src="/views-office.js"></script>
+<script src="/views-admin.js"></script>
+</body>
+</html>

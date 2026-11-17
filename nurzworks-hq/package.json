@@ -1,0 +1,16 @@
+{
+  "name": "nurzworks-hq",
+  "version": "1.0.0",
+  "description": "NurzWorks HQ: business tracking for a mobile service & consulting business - CRM, jobs & field scheduling, estimates, invoicing, time, Gmail, Google Calendar, Slack, and an MCP server for AI office staff.",
+  "main": "server.js",
+  "private": true,
+  "bin": { "nurzworks-mcp": "mcp-stdio.js" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test --test-concurrency=1 test/*.test.js",
+    "mcp": "node mcp-stdio.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}
